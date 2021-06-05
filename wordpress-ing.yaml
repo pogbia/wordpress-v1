@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: myapp-ing
+spec:
+  rules:
+  - host: mcseoper.iptime.org
+    http:
+      paths:
+      - path: /a
+        backend:
+          serviceName: wordpress-svc
+          servicePort: 80
